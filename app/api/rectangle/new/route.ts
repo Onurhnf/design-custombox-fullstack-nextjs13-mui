@@ -15,8 +15,6 @@ export const POST = async (request: NextRequest, response: Response) => {
       {} as IRectangle.IRectangleDetail;
     const uploadDir = join(process.cwd(), "public");
 
-    console.log({ datasss: Array.from(formData.entries()) });
-
     try {
       await stat(uploadDir);
     } catch (e: any) {
