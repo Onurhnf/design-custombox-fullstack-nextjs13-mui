@@ -4,7 +4,6 @@ import RectangleService from "@/services/Rectangle.service";
 import { Helpers } from "@/utils/Helpers";
 import {
   Box,
-  Divider,
   Drawer,
   List,
   ListItem,
@@ -23,6 +22,7 @@ type RectangleProps = {
 
 export default function SideBar({ rectangle, setRectangle }: RectangleProps) {
   const { data: session } = useSession();
+  const isMdDown = Helpers.useMediaQuery("down", "md");
   const [rectangleList, setRectangleList] = useState<
     IRectangle.IRectangleDetail[]
   >([]);
@@ -46,10 +46,10 @@ export default function SideBar({ rectangle, setRectangle }: RectangleProps) {
   return (
     <Drawer
       sx={{
-        width: "240px",
+        width: isMdDown ? "60px" : "240px",
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: "240px",
+          width: isMdDown ? "60px" : "240px",
           boxSizing: "border-box",
         },
       }}
