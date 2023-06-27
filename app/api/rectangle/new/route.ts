@@ -20,6 +20,7 @@ export const POST = async (request: NextRequest, response: Response) => {
     } catch (e: any) {
       if (e.code === "ENOENT") {
         await mkdir(uploadDir, { recursive: true });
+        console.log("public file created");
       } else {
         console.error(
           "Error while trying to create directory when uploading a file\n",
