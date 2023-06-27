@@ -54,7 +54,7 @@ export default function Rectangle({ rectangle, setRectangle }: RectangleProps) {
     updateColumnWidths();
     updateRowHeights();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [columnCount, rowCount]);
+  }, [columnCount, rowCount, mainHeight, mainWidth]);
 
   useEffect(() => {
     if (rectangle.createdAt) {
